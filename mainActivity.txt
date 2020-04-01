@@ -1,0 +1,132 @@
+package com.example.unogame;
+
+import android.app.Activity;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+
+import androidx.annotation.RequiresApi;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
+
+import java.util.Random;
+
+public class MainActivity extends Activity {
+    //final Random rnd = new Random();
+    //Random r = new Random();
+    //Random r1=new Random();
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        generateHand();
+
+
+        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.mainLayout);
+
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.drawable.green7);
+
+        layout.addView(imageView);
+
+        setContentView(layout);
+
+        /*
+        //generate player hand and random top card and top of deck with button to draw
+
+        //generates random card and displays it
+
+        ImageView img = findViewById(R.id.img5);
+        int randColor = r1.nextInt(4);
+        String[] colorArr = {"blue","green","red","yellow"};
+        String cardColor = colorArr[randColor];
+        int cardNum = r.nextInt(9)+1;
+        int imageRes = getResources().getIdentifier(cardColor+cardNum, "drawable", getPackageName());
+        img.setImageResource(imageRes);
+
+        //setting a tag on the ImageView which is the image's name (ex: yellow1)
+
+        String id = img.getResources().getResourceEntryName(imageRes);
+        img.setTag(id);
+        Object obj = img.getTag();
+        String idStr = obj.toString();
+        Log.d("Id", idStr);
+
+
+         */
+    }
+
+    public void generateHand(){
+        Random r = new Random();
+        Random r1=new Random();
+        Random a = new Random();
+        Random a1=new Random();
+        Random b = new Random();
+        Random b1=new Random();
+        Random c = new Random();
+        Random c1=new Random();
+        Random d = new Random();
+        Random d1=new Random();
+        String[] colorArr = {"blue","green","red","yellow"};
+        int randColor1 = r1.nextInt(4);
+        int randColor2 = a1.nextInt(4);
+        int randColor3 = b1.nextInt(4);
+        int randColor4 = c1.nextInt(4);
+        int randColor5 = d1.nextInt(4);
+        String cardColor1 = colorArr[randColor1];
+        String cardColor2 = colorArr[randColor2];
+        String cardColor3 = colorArr[randColor3];
+        String cardColor4 = colorArr[randColor4];
+        String cardColor5 = colorArr[randColor5];
+        int cardNum1 = r.nextInt(9)+1;
+        int cardNum2 = a.nextInt(9)+1;
+        int cardNum3 = b.nextInt(9)+1;
+        int cardNum4 = c.nextInt(9)+1;
+        int cardNum5 = d.nextInt(9)+1;
+            //generates random card and displays it
+
+            ImageView img1 = findViewById(R.id.img1);
+            ImageView img2 = findViewById(R.id.img2);
+            ImageView img3 = findViewById(R.id.img3);
+            ImageView img4 = findViewById(R.id.img4);
+            ImageView img5 = findViewById(R.id.img5);
+            int imageRes1 = getResources().getIdentifier(cardColor1+cardNum1, "drawable", getPackageName());
+            int imageRes2 = getResources().getIdentifier(cardColor2+cardNum2, "drawable", getPackageName());
+            int imageRes3 = getResources().getIdentifier(cardColor3+cardNum3, "drawable", getPackageName());
+            int imageRes4 = getResources().getIdentifier(cardColor4+cardNum4, "drawable", getPackageName());
+            int imageRes5 = getResources().getIdentifier(cardColor5+cardNum5, "drawable", getPackageName());
+            img1.setImageResource(imageRes1);
+            img2.setImageResource(imageRes2);
+            img3.setImageResource(imageRes3);
+            img4.setImageResource(imageRes4);
+            img5.setImageResource(imageRes5);
+
+
+
+    }
+
+    public void whenClick(View v){
+        //String color =
+        //Card temp = new Card();
+    }
+
+    public void addRandomCard(){
+        int[] idArr = new int[36]; //filled with ids of cards using:
+
+        // int imageRes = getResources().getIdentifier(cardColor3+cardNum3, "drawable", getPackageName());
+
+        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.mainLayout);
+
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(idArr[/*randnum*/]);
+        //align imageview to bottom of page with other cards
+        layout.addView(imageView);
+
+        setContentView(layout);
+    }
+}
